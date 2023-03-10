@@ -14,10 +14,7 @@ List item_electro_name = [
   'Lenovo ThinkBook 15 Gen',
   'Parasonic 44" Premium',
   'Iphone 12 Pro Max',
-  'HP Pavillion 11 Gen',
-  'LG 72" Edge',
-  'Iphone 11 Pro',
-  'Dell Inspiron 16',
+
 ];
 List photo_electro = [
   "assets/images/electronics/tv1.jpg",
@@ -25,16 +22,52 @@ List photo_electro = [
   "assets/images/electronics/laptop1.jpg",
   "assets/images/electronics/tv2.jpg",
   "assets/images/electronics/iphone2.jpg",
-  "assets/images/electronics/laptop2.jpg",
-  "assets/images/electronics/tv3.jpg",
-  "assets/images/electronics/iphone2.jpg",
-  "assets/images/electronics/laptop3.jpg",
+
 ];
 List data_electro = [
   "Sony dual Audio , LED Display with 55inch 4k screen smartTV with given 5 year screen warrantry and 10 year processor warrantry ",
   "iPhone 13 models come in 5.4 and 6.1-inch sizes, with the 5.4-inch iPhone 13 Pro positioned as Apple's smallest iPhone. ",
   "Lenovo 12th Generation Intel® Core™ i5-1235U Processor (E-cores up to 3.30 GHz P-cores up to 4.40 GHz)Windows 11 Pro 64",
   "Parasonic dual Audio , LED Display with 44inch 4k screen smartTV with given 5 year screen warrantry and 10 year processor warrantry ",
+  "The iPhone 12 was Apple's mainstream flagship iPhone for 2020. Available in a 6.1-inch size, the iPhone 12 offers 5G, an OLED display, improved cameras, and Apple's A14 chip.",
+
+];
+List item_fashion_name = [
+  "Belt",
+  "Pents",
+  "Shirts",
+  "Shoes",
+  "T-shirts",
+];
+List photo_fashion = [
+  "assets/images/fashion/belt.jpg",
+  "assets/images/fashion/pents.jpg",
+  "assets/images/fashion/shirts.jpg",
+  "assets/images/fashion/shoes.jpg",
+  "assets/images/fashion/t_shirt.jpg",
+];
+List data_fashion = [
+  "Belt 1000",
+  "Pents10000",
+  "Shirts25",
+  "Shoes 10",
+  "T-shirts 9009",
+];
+List item_home_name = [
+  'Iphone 12 Pro Max',
+  'HP Pavillion 11 Gen',
+  'LG 72" Edge',
+  'Iphone 11 Pro',
+  'Dell Inspiron 16',
+];
+List photo_home = [
+  "assets/images/electronics/iphone2.jpg",
+  "assets/images/electronics/laptop2.jpg",
+  "assets/images/electronics/tv3.jpg",
+  "assets/images/electronics/iphone2.jpg",
+  "assets/images/electronics/laptop3.jpg",
+];
+List data_home = [
   "The iPhone 12 was Apple's mainstream flagship iPhone for 2020. Available in a 6.1-inch size, the iPhone 12 offers 5G, an OLED display, improved cameras, and Apple's A14 chip.",
   "HP 12th Generation Intel® Core™ i5 processor Windows 11 Home 35.6 cm (14) diagonal IPS Brightview 250 nits display (1920X1080) ",
   "LG Audio , LED Display with 72inch 4k screen smartTV with given 5 year screen warrantry and 10 year processor warrantry ",
@@ -57,19 +90,6 @@ class _HomeScreenState extends State<HomeScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 InkWell(
-                    child: Text("Electronics",
-                        style: TextStyle(fontSize: 20, color: Colors.white))),
-                Text("Fasion",
-                    style: TextStyle(fontSize: 20, color: Colors.white)),
-                Text("Home Appliance",
-                    style: TextStyle(fontSize: 20, color: Colors.white)),
-              ],
-            ),
-            SizedBox(height: 25),
-            IndexedStack(
-              index: i,
-              children: [
-                InkWell(
                     onTap: () {
                       setState(() {
                         i = 0;
@@ -83,7 +103,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         i = 1;
                       });
                     },
-                    child: Text("Fasion",
+                    child: Text("Fashion",
                         style: TextStyle(fontSize: 20, color: Colors.white))),
                 InkWell(
                     onTap: () {
@@ -95,15 +115,14 @@ class _HomeScreenState extends State<HomeScreen> {
                         style: TextStyle(fontSize: 20, color: Colors.white))),
               ],
             ),
+            SizedBox(height: 25),
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(
-                //mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Items("assets/images/electronics/iphone2.jpg"),
                   Items("assets/images/electronics/iphone3.jpg"),
-                  // Items("assets/images/electronics/iphone3.jpg"),
-                  // Items("assets/images/electronics/iphone3.jpg"),
                   // Items("assets/images/electronics/iphone3.jpg"),
                   // Items("assets/images/electronics/iphone3.jpg"),
                   // Items("assets/images/electronics/iphone3.jpg"),
@@ -131,7 +150,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 SizedBox(width: 10),
                 InkWell(
-                  onTap: (){
+                  onTap: () {
                     setState(() {
                       Navigator.pushNamed(context, "view");
                     });
@@ -193,3 +212,25 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
+
+
+/*
+Electronics Items
+
+'HP Pavillion 11 Gen',
+  'LG 72" Edge',
+  'Iphone 11 Pro',
+  'Dell Inspiron 16',
+
+
+   "assets/images/electronics/laptop2.jpg",
+  "assets/images/electronics/tv3.jpg",
+  "assets/images/electronics/iphone2.jpg",
+  "assets/images/electronics/laptop3.jpg",
+
+   "HP 12th Generation Intel® Core™ i5 processor Windows 11 Home 35.6 cm (14) diagonal IPS Brightview 250 nits display (1920X1080) ",
+  "LG Audio , LED Display with 72inch 4k screen smartTV with given 5 year screen warrantry and 10 year processor warrantry ",
+  "iphone 11 6.1-inch display, the iPhone 11 is between the 5.4-inch ",
+  "Dell 11th Gen Intel® Core™ i3-1115G4 (6 MB cache, 2 cores, 4 threads, 3.00 GHz to 4.10 GHz Turbo)",
+
+*/
