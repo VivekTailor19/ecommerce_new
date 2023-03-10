@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'dataModal.dart';
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
@@ -75,6 +77,9 @@ List data_home = [
   "Dell 11th Gen Intel® Core™ i3-1115G4 (6 MB cache, 2 cores, 4 threads, 3.00 GHz to 4.10 GHz Turbo)",
 ];
 
+//List<InfoModal> ele = [InfoModal(type: "Electronics",name: "${item_electro_name}")];
+
+
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
@@ -119,16 +124,13 @@ class _HomeScreenState extends State<HomeScreen> {
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Items("assets/images/electronics/iphone2.jpg"),
-                  Items("assets/images/electronics/iphone3.jpg"),
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: item_electro_name.asMap().entries.map((e) => Items(item_electro_name[e.key],)).toList(),)
+                 // [  Items("assets/images/electronics/iphone3.jpg"),
                   // Items("assets/images/electronics/iphone3.jpg"),
-                  // Items("assets/images/electronics/iphone3.jpg"),
-                  // Items("assets/images/electronics/iphone3.jpg"),
-                ],
+                  // Items("assets/images/electronics/iphone3.jpg"),],
               ),
-            ),
+
             SizedBox(height: 30),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -171,42 +173,46 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  Widget Items(String img) {
+  Widget Items(String item_name ) {
     return Padding(
-      padding: const EdgeInsets.all(25.0),
+      padding: const EdgeInsets.symmetric(horizontal: 10.0),
       child: Container(
         height: 250,
         width: 150,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(15), color: Colors.white),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 15.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Icon(Icons.favorite,
-                      size: 20,
-                      color: Colors.blueAccent,
-                      shadows: [Shadow(color: Colors.black12, blurRadius: 3)]),
-                  Icon(Icons.local_mall,
-                      size: 20,
-                      color: Colors.blueAccent,
-                      shadows: [Shadow(color: Colors.black12, blurRadius: 3)]),
-                ],
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 5.0),
+          child: Column(
+            //
+            children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 10.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Icon(Icons.favorite,
+                        size: 20,
+                        color: Colors.blueAccent,
+                        shadows: [Shadow(color: Colors.black12, blurRadius: 3)]),
+                    Icon(Icons.local_mall,
+                        size: 20,
+                        color: Colors.blueAccent,
+                        shadows: [Shadow(color: Colors.black12, blurRadius: 3)]),
+                  ],
+                ),
               ),
-            ),
-            SizedBox(height: 5),
-            Image.asset("$img", height: 75, width: 75, fit: BoxFit.fill),
-            Text("Item_name",
-                style: TextStyle(fontSize: 35, color: Colors.blue)),
-            Text("⭐⭐⭐⭐⭐", style: TextStyle(fontSize: 15)),
-            SizedBox(height: 20),
-            Text("See the details >",
-                style: TextStyle(fontSize: 18, color: Colors.lightBlue)),
-          ],
+              SizedBox(height: 5),
+              //AssetImage(${img}),
+          //height: 75, width: 75, fit: BoxFit.fill),
+              Text("${item_name}",
+                  style: TextStyle(fontSize: 15, color: Colors.blue),textAlign: TextAlign.left),
+              Text("⭐⭐⭐⭐⭐", style: TextStyle(fontSize: 11)),
+              SizedBox(height: 20),
+              Text("See the details >",
+                  style: TextStyle(fontSize: 12, color: Colors.lightBlue)),
+            ],
+          ),
         ),
       ),
     );
