@@ -1,3 +1,4 @@
+import 'package:ecommerce/dataModal.dart';
 import 'package:flutter/material.dart';
 
 class Item_View extends StatefulWidget {
@@ -12,6 +13,9 @@ int count = 00;
 class _Item_ViewState extends State<Item_View> {
   @override
   Widget build(BuildContext context) {
+
+    InfoModal info = ModalRoute.of(context)!.settings.arguments as InfoModal;
+
     return Scaffold(
         body: Column(
       children: [
@@ -19,6 +23,8 @@ class _Item_ViewState extends State<Item_View> {
           height: 200,
           width: 500,
           color: Colors.black12,
+          alignment: Alignment.center,
+          child: Image.asset("${info.photo}",height: 250,width: 300,fit: BoxFit.fill,),
         ),
         Container(
           height: 250,
@@ -58,13 +64,13 @@ class _Item_ViewState extends State<Item_View> {
                 ),
               ),
               Text(
-                "Item_Name",
+                "${info.name}",
                 style: TextStyle(
                   fontSize: 35,
                   color: Colors.deepPurpleAccent,
                 ),
               ),
-              Text("Data",
+              Text("${info.data}",
                   style: TextStyle(
                       fontSize: 15, color: Colors.deepPurpleAccent)),
               Text(
