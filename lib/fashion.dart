@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'dataModal.dart';
+
 class Fashion extends StatefulWidget {
   const Fashion({Key? key}) : super(key: key);
 
@@ -15,11 +17,11 @@ List item_name = [
   "T-shirts",
 ];
 List photo = [
-  "assets/images/fashion/belt.jpg",
-  "assets/images/fashion/pents.jpg",
-  "assets/images/fashion/shirts.jpg",
-  "assets/images/fashion/shoes.jpg",
-  "assets/images/fashion/t_shirt.jpg",
+  "https://m.media-amazon.com/images/I/41gUfQa6mMS.jpg",
+  "https://m.media-amazon.com/images/I/81e4Tkj9dNL._UY550_.jpg",
+  "https://m.media-amazon.com/images/I/61geYHHkZCL._UY550_.jpg",
+  "https://m.media-amazon.com/images/I/61HfQkk1CRL._UY625_.jpg",
+  "https://m.media-amazon.com/images/I/61XQFTiaSjL._UX569_.jpg",
 ];
 List data = [
   "Belt 1000",
@@ -39,10 +41,9 @@ class _FashionState extends State<Fashion> {
           children:
           item_name.asMap().entries.map((e) =>
               InkWell(onTap: () {
-                //InfoModal info = InfoModal(name: item_name.toString(),photo: photo.toString(),data: data.toString());
                 setState(() {
-
-                  //Navigator.pushNamed(context, "view" , arguments: info);
+                  InfoModal info = InfoModal(name: item_name[e.key],photo: photo[e.key],data: data[e.key]);
+                  Navigator.pushNamed(context, "view" , arguments: info);
                 });
               },
                   child: Items(item_name[e.key],photo[e.key]))).toList(),)
@@ -57,8 +58,8 @@ class _FashionState extends State<Fashion> {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 10.0),
       child: Container(
-        height: 250,
-        width: 150,
+        height: 350,
+        width: 250,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(15), color: Colors.white),
         child: Padding(
@@ -72,24 +73,24 @@ class _FashionState extends State<Fashion> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Icon(Icons.favorite,
-                        size: 20,
+                        size: 30,
                         color: Colors.blueAccent,
                         shadows: [Shadow(color: Colors.black12, blurRadius: 3)]),
                     Icon(Icons.local_mall,
-                        size: 20,
+                        size: 30,
                         color: Colors.blueAccent,
                         shadows: [Shadow(color: Colors.black12, blurRadius: 3)]),
                   ],
                 ),
               ),
               SizedBox(height: 5),
-              Image.asset("${img}"),
+              Image.network("${img}",height: 170,width: 250,fit: BoxFit.fill),
               Text("${item_name}",
-                  style: TextStyle(fontSize: 15, color: Colors.blue),textAlign: TextAlign.left),
-              Text("⭐⭐⭐⭐⭐", style: TextStyle(fontSize: 11)),
+                  style: TextStyle(fontSize: 25, color: Colors.blue),textAlign: TextAlign.left),
+              Text("⭐⭐⭐⭐⭐", style: TextStyle(fontSize: 15)),
               SizedBox(height: 20),
               Text("See the details >",
-                  style: TextStyle(fontSize: 12, color: Colors.lightBlue)),
+                  style: TextStyle(fontSize: 20, color: Colors.lightBlue)),
             ],
           ),
         ),

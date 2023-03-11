@@ -24,7 +24,7 @@ class _Item_ViewState extends State<Item_View> {
           width: 500,
           color: Colors.black12,
           alignment: Alignment.center,
-          child: Image.asset("${info.photo}",height: 250,width: 300,fit: BoxFit.fill,),
+          child: Image.network("${info.photo}",height: 250,width: 300,fit: BoxFit.fill,),
         ),
         Container(
           height: 250,

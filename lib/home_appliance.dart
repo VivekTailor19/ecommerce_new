@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'dataModal.dart';
+
 class HomeAppliance extends StatefulWidget {
   const HomeAppliance({Key? key}) : super(key: key);
 
@@ -8,27 +10,27 @@ class HomeAppliance extends StatefulWidget {
 }
 
 List item_name = [
-  'Iphone 12 Pro Max',
-  'HP Pavillion 11 Gen',
-  'LG 72" Edge',
-  'Iphone 11 Pro',
-  'Dell Inspiron 16',
+  'Mixer',
+  'Iron',
+  'Washing Machine',
+  'AC',
+  'Fan',
 ];
 
 List photo = [
-  "assets/images/electronics/iphone2.jpg",
-  "assets/images/electronics/laptop2.jpg",
-  "assets/images/electronics/tv3.jpg",
-  "assets/images/electronics/iphone2.jpg",
-  "assets/images/electronics/laptop3.jpg",
+  "https://m.media-amazon.com/images/I/61zhqJg1bTL._SX425_.jpg",
+  "https://m.media-amazon.com/images/I/31WXnM9XIYL._SY300_SX300_.jpg",
+  "https://m.media-amazon.com/images/I/61Mt19diw9L._SY500_.jpg",
+  "https://m.media-amazon.com/images/I/31qTfGNvNRL._SX342_SY445_.jpg",
+  "https://m.media-amazon.com/images/I/41XJ2wk4M1L._SX425_.jpg",
 ];
 
 List data = [
-  "The iPhone 12 was Apple's mainstream flagship iPhone for 2020. Available in a 6.1-inch size, the iPhone 12 offers 5G, an OLED display, improved cameras, and Apple's A14 chip.",
-  "HP 12th Generation Intel® Core™ i5 processor Windows 11 Home 35.6 cm (14) diagonal IPS Brightview 250 nits display (1920X1080) ",
-  "LG Audio , LED Display with 72inch 4k screen smartTV with given 5 year screen warrantry and 10 year processor warrantry ",
-  "iphone 11 6.1-inch display, the iPhone 11 is between the 5.4-inch ",
-  "Dell 11th Gen Intel® Core™ i3-1115G4 (6 MB cache, 2 cores, 4 threads, 3.00 GHz to 4.10 GHz Turbo)",
+  "Lifelong LLMG23 Power Pro 500-Watt Mixer Grinder with 3 Jars (Liquidizing, Wet Grinding and Chutney Jar), Stainless Steel blades, 1 Year Warranty (Black)",
+  "USHA Armor AR1100WB 1100 W Dry Iron with Black Weilburger Soleplate (Purple)",
+  "Samsung 6.5 Kg 5 Star Inverter Fully-Automatic Top Loading Washing Machine (WA65T4262FS/TL , Silver, Wobble technology)",
+  "Panasonic 1.5 Ton 5 Star Wi-Fi Inverter Smart Split AC (Copper Condenser, 7 in 1 Convertible with additional AI Mode, 4 Way Swing, PM 0.1 Air Purification Filter, CS/CU-NU18YKY5W,2023 Model, White)",
+  "Bajaj Frore 1200 mm Ceiling Fan (Brown)",
 ];
 
 class _HomeApplianceState extends State<HomeAppliance> {
@@ -42,8 +44,8 @@ class _HomeApplianceState extends State<HomeAppliance> {
           item_name.asMap().entries.map((e) =>
               InkWell(onTap: () {
                 setState(() {
-                 // InfoModal info = InfoModal(name: item_name.toString(),photo: photo.toString(),data: data.toString());
-                //  Navigator.pushNamed(context, "view" , arguments: info);
+                  InfoModal info = InfoModal(name: item_name[e.key],photo: photo[e.key],data: data[e.key]);
+                  Navigator.pushNamed(context, "view" , arguments: info);
                 });
               },
                   child: Items(item_name[e.key],photo[e.key]))).toList(),)
@@ -58,8 +60,8 @@ class _HomeApplianceState extends State<HomeAppliance> {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 10.0),
       child: Container(
-        height: 250,
-        width: 150,
+        height: 350,
+        width: 250,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(15), color: Colors.white),
         child: Padding(
@@ -73,24 +75,24 @@ class _HomeApplianceState extends State<HomeAppliance> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Icon(Icons.favorite,
-                        size: 20,
+                        size: 30,
                         color: Colors.blueAccent,
                         shadows: [Shadow(color: Colors.black12, blurRadius: 3)]),
                     Icon(Icons.local_mall,
-                        size: 20,
+                        size: 30,
                         color: Colors.blueAccent,
                         shadows: [Shadow(color: Colors.black12, blurRadius: 3)]),
                   ],
                 ),
               ),
               SizedBox(height: 5),
-              Image.asset("${img}"),
+              Image.network("${img}",height: 170,width: 250,fit: BoxFit.fill),
               Text("${item_name}",
-                  style: TextStyle(fontSize: 15, color: Colors.blue),textAlign: TextAlign.left),
-              Text("⭐⭐⭐⭐⭐", style: TextStyle(fontSize: 11)),
+                  style: TextStyle(fontSize: 25, color: Colors.blue),textAlign: TextAlign.left),
+              Text("⭐⭐⭐⭐⭐", style: TextStyle(fontSize: 15)),
               SizedBox(height: 20),
               Text("See the details >",
-                  style: TextStyle(fontSize: 12, color: Colors.lightBlue)),
+                  style: TextStyle(fontSize: 20, color: Colors.lightBlue)),
             ],
           ),
         ),

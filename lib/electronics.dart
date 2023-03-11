@@ -17,12 +17,11 @@ List item_name = [
 
 ];
 List photo = [
-  "assets/images/electronics/tv1.jpg",
-  "assets/images/electronics/iphone1.jpg",
-  "assets/images/electronics/laptop1.jpg",
-  "assets/images/electronics/tv2.jpg",
-  "assets/images/electronics/iphone2.jpg",
-
+  "https://m.media-amazon.com/images/I/81wxS8abrgL._SL1500_.jpg",
+  "https://m.media-amazon.com/images/I/71fVoqRC0wL._SL1500_.jpg",
+  "https://m.media-amazon.com/images/I/81HmU0UvXZL._SL1500_.jpg",
+  "https://rukminim1.flixcart.com/image/416/416/xif0q/television/v/u/e/th-40ls670dx-th-40ls670dx-panasonic-original-imagg3fvnu3cazph.jpeg?q=70",
+  "https://m.media-amazon.com/images/I/417PwBC+iEL._SX342_SY445_.jpg",
 ];
 List data = [
   "Sony dual Audio , LED Display with 55inch 4k screen smartTV with given 5 year screen warrantry and 10 year processor warrantry ",
@@ -61,8 +60,8 @@ class _ElectronicsState extends State<Electronics> {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 10.0),
       child: Container(
-        height: 300,
-        width: 200,
+        height: 350,
+        width: 250,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(15), color: Colors.white),
         child: Padding(
@@ -87,7 +86,7 @@ class _ElectronicsState extends State<Electronics> {
                 ),
               ),
               SizedBox(height: 5),
-              Image.asset("${img}",height: 250,width: 150,fit: BoxFit.fill),
+              Image.network("${img}",height: 170,width: 250,fit: BoxFit.fill),
               Text("${item_name}",
                   style: TextStyle(fontSize: 25, color: Colors.blue),textAlign: TextAlign.left),
               Text("⭐⭐⭐⭐⭐", style: TextStyle(fontSize: 15)),
