@@ -26,11 +26,12 @@ class _HomeScreenState extends State<HomeScreen> {
           children: [
             Text("Explore Product",
                 style: TextStyle(fontSize: 35, color: Colors.white)),
+            SizedBox(height: 10),
             Row(
               children: [
                 Expanded(
                   child: Container(
-                    height: 70,
+                    height: 60,
                     width: 350,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
@@ -39,11 +40,11 @@ class _HomeScreenState extends State<HomeScreen> {
                       children: [
                         Padding(
                           padding: EdgeInsets.only(left: 10),
-                          child: Icon(Icons.search),
+                          child: Icon(Icons.search,size: 25),
                         ),
                         Padding(
                           padding: EdgeInsets.only(left: 10),
-                          child: Text("Enter Items",style: TextStyle(fontSize: 30)),
+                          child: Text("Enter Items",style: TextStyle(fontSize: 25)),
                         )
                       ],
                     ),
@@ -51,15 +52,15 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 SizedBox(width: 10),
                 Container(
-                  height: 70,
-                  width: 70,
+                  height: 60,
+                  width: 60,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
                       color: Colors.white),
                   child: Icon(
                     Icons.camera_alt_outlined,
                     color: Colors.black,
-                    size: 40,
+                    size: 30,
                   ),
                 ),
               ],
@@ -112,30 +113,33 @@ class _HomeScreenState extends State<HomeScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  height: 30,
-                  width: 30,
+                  height: 50,
+                  width: 50,
                   alignment: Alignment.center,
-                  color: Colors.white,
-                  child: Icon(Icons.favorite_border, color: Colors.black),
+                  decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(10)),color: Colors.white,),
+                  child: Icon(Icons.favorite_border_rounded, color: Colors.black,size: 30),
+
                 ),
                 SizedBox(width: 10),
                 Container(
-                  height: 30,
-                  width: 30,
+                  height: 50,
+                  width: 50,
                   alignment: Alignment.center,
-                  color: Colors.white,
-                  child: Icon(Icons.tune_outlined, color: Colors.black),
+                  decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(10)),color: Colors.white,),
+                  child: Icon(Icons.tune_rounded, color: Colors.black,size: 30),
+
                 ),
                 SizedBox(width: 10),
-
                 Container(
-                    height: 30,
-                    width: 30,
-                    alignment: Alignment.center,
-                    color: Colors.white,
-                    child: Icon(Icons.local_mall_outlined, color: Colors.black),
+                  height: 50,
+                  width: 50,
+                  alignment: Alignment.center,
+                  decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(10)),color: Colors.white,),
+                  child: Icon(Icons.local_mall_outlined, color: Colors.black,size: 30),
 
                 ),
+
+
               ],
             )
           ],
