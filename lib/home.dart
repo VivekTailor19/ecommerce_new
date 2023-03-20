@@ -13,7 +13,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 int i = 0;
-
 //List<InfoModal> ele = [InfoModal(type: "Electronics",name: "${item_electro_name}")];
 
 class _HomeScreenState extends State<HomeScreen> {
