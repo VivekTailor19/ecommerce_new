@@ -27,43 +27,46 @@ class _HomeScreenState extends State<HomeScreen> {
             Text("Explore Product",
                 style: TextStyle(fontSize: 35, color: Colors.white)),
             SizedBox(height: 10),
-            Row(
-              children: [
-                Expanded(
-                  child: Container(
+            Padding(
+              padding:  EdgeInsets.symmetric(horizontal: 10.0),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: Container(
+                      height: 60,
+                      width: 350,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: Colors.white),
+                      child: Row(
+                        children: [
+                          Padding(
+                            padding: EdgeInsets.only(left: 10),
+                            child: Icon(Icons.search,size: 25),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.only(left: 10),
+                            child: Text("Enter Items",style: TextStyle(fontSize: 25)),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                  SizedBox(width: 10),
+                  Container(
                     height: 60,
-                    width: 350,
+                    width: 60,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
                         color: Colors.white),
-                    child: Row(
-                      children: [
-                        Padding(
-                          padding: EdgeInsets.only(left: 10),
-                          child: Icon(Icons.search,size: 25),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(left: 10),
-                          child: Text("Enter Items",style: TextStyle(fontSize: 25)),
-                        )
-                      ],
+                    child: Icon(
+                      Icons.camera_alt_outlined,
+                      color: Colors.black,
+                      size: 30,
                     ),
                   ),
-                ),
-                SizedBox(width: 10),
-                Container(
-                  height: 60,
-                  width: 60,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Colors.white),
-                  child: Icon(
-                    Icons.camera_alt_outlined,
-                    color: Colors.black,
-                    size: 30,
-                  ),
-                ),
-              ],
+                ],
+              ),
             ),
             SizedBox(height: 25),
             Row(
