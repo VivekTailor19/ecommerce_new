@@ -12,10 +12,31 @@ class HomeScreen extends StatefulWidget {
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
-int i = 0;
-//List<InfoModal> ele = [InfoModal(type: "Electronics",name: "${item_electro_name}")];
+
 
 class _HomeScreenState extends State<HomeScreen> {
+
+
+
+  List<InfoModal> items = [
+    InfoModal(name: "Mixer" , photo: "https://m.media-amazon.com/images/I/61zhqJg1bTL._SX425_.jpg" , data: "Lifelong LLMG23 Power Pro 500-Watt Mixer Grinder with 3 Jars (Liquidizing, Wet Grinding and Chutney Jar), Stainless Steel blades, 1 Year Warranty (Black)" , category: "Home-Appliance" ),
+    InfoModal(name: "Iron" , photo: "https://m.media-amazon.com/images/I/31WXnM9XIYL._SY300_SX300_.jpg" , data: "USHA Armor AR1100WB 1100 W Dry Iron with Black Weilburger Soleplate (Purple)" , category: "Home-Appliance" ),
+    InfoModal(name: "Washing Machine" , photo: "https://m.media-amazon.com/images/I/61Mt19diw9L._SY500_.jpg" , data: "Samsung 6.5 Kg 5 Star Inverter Fully-Automatic Top Loading Washing Machine (WA65T4262FS/TL , Silver, Wobble technology)" , category: "Home-Appliance" ),
+    InfoModal(name: "AC" , photo: "https://m.media-amazon.com/images/I/31qTfGNvNRL._SX342_SY445_.jpg" , data: "Panasonic 1.5 Ton 5 Star Wi-Fi Inverter Smart Split AC (Copper Condenser, 7 in 1 Convertible with additional AI Mode, 4 Way Swing, PM 0.1 Air Purification Filter, CS/CU-NU18YKY5W,2023 Model, White)" , category: "Home-Appliance" ),
+    InfoModal(name: "Fan" , photo: "https://m.media-amazon.com/images/I/41XJ2wk4M1L._SX425_.jpg" , data: "Bajaj Frore 1200 mm Ceiling Fan (Brown)" , category: "Home-Appliance" ),
+    InfoModal(name: "Sony Bravia 55\" Classic" , photo: "https://m.media-amazon.com/images/I/81wxS8abrgL._SL1500_.jpg" , data: "Sony dual Audio , LED Display with 55inch 4k screen smartTV with given 5 year screen warrantry and 10 year processor warrantry " , category: "Electronics" ),
+    InfoModal(name: "Iphone 13 Pro" , photo: "https://m.media-amazon.com/images/I/71fVoqRC0wL._SL1500_.jpg" , data: "iPhone 13 models come in 5.4 and 6.1-inch sizes, with the 5.4-inch iPhone 13 Pro positioned as Apple's smallest iPhone. " , category: "Electronics" ),
+    InfoModal(name: "Lenovo ThinkBook 15 Gen" , photo: "https://m.media-amazon.com/images/I/81HmU0UvXZL._SL1500_.jpg" , data: "Lenovo 12th Generation Intel® Core™ i5-1235U Processor (E-cores up to 3.30 GHz P-cores up to 4.40 GHz)Windows 11 Pro 64" , category: "Electronics" ),
+    InfoModal(name: "Parasonic 44\" Premium" , photo: "https://rukminim1.flixcart.com/image/416/416/xif0q/television/v/u/e/th-40ls670dx-th-40ls670dx-panasonic-original-imagg3fvnu3cazph.jpeg?q=70" , data: "Parasonic dual Audio , LED Display with 44inch 4k screen smartTV with given 5 year screen warrantry and 10 year processor warrantry " , category: "Electronics" ),
+    InfoModal(name: "Iphone 12 Pro Max" , photo: "https://m.media-amazon.com/images/I/417PwBC+iEL._SX342_SY445_.jpg" , data: "The iPhone 12 was Apple's mainstream flagship iPhone for 2020. Available in a 6.1-inch size, the iPhone 12 offers 5G, an OLED display, improved cameras, and Apple's A14 chip." , category: "Electronics" ),
+    InfoModal(name: "Belt" , photo: "https://m.media-amazon.com/images/I/41gUfQa6mMS.jpg" , data: "Belt 1000" , category: "fashion" ),
+    InfoModal(name: "Pents" , photo: "https://m.media-amazon.com/images/I/81e4Tkj9dNL._UY550_.jpg" , data: "Pents10000" , category: "fashion" ),
+    InfoModal(name: "Shirts" , photo: "https://m.media-amazon.com/images/I/61geYHHkZCL._UY550_.jpg" , data: "Shirts25" , category: "fashion" ),
+    InfoModal(name: "Shoes" , photo: "https://m.media-amazon.com/images/I/61HfQkk1CRL._UY625_.jpg" , data: "Shoes 10" , category: "fashion" ),
+    InfoModal(name: "T-shirts" , photo: "https://m.media-amazon.com/images/I/61XQFTiaSjL._UX569_.jpg" , data: "T-shirts 9009" , category: "fashion"),
+
+  ];
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -68,46 +89,37 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             SizedBox(height: 25),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                InkWell(
-                    onTap: () {
-                      setState(() {
-                        i = 0;
-                      });
-                    },
-                    child: Text("Electronics",
-                        style: TextStyle(fontSize: 20, color: Colors.white))),
-                InkWell(
-                    onTap: () {
-                      setState(() {
-                        i = 1;
-                      });
-                    },
-                    child: Text("Fashion",
-                        style: TextStyle(fontSize: 20, color: Colors.white))),
-                InkWell(
-                    onTap: () {
-                      setState(() {
-                        i = 2;
-                      });
-                    },
-                    child: Text("Home Appliance",
-                        style: TextStyle(fontSize: 20, color: Colors.white))),
-              ],
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Container(height: 25,
+                child: Expanded(
+                  child: ListView(scrollDirection: Axis.horizontal,
+
+                  children: [
+                    Text("Items",
+                        style: TextStyle(fontSize: 18, color: Colors.white)),
+                    SizedBox(width: 10),
+                    Text("Electronics",
+                        style: TextStyle(fontSize: 18, color: Colors.white)),
+                    SizedBox(width: 10),
+                    Text("Fashion",
+                        style: TextStyle(fontSize: 18, color: Colors.white)),
+                    SizedBox(width: 10),
+                    Text("Home Appliance",
+                        style: TextStyle(fontSize: 18, color: Colors.white)),
+
+                  ],),
+                ),
+              ),
             ),
+          
+            
             SizedBox(height: 25),
-            IndexedStack(
-              index: i,
 
-              children: [
-                Electronics(),
-                Fashion(),
-                HomeAppliance(),
+            ListView.builder(itemBuilder: (context, index) {
 
-              ],
-            ),
+              },
+            scrollDirection: Axis.horizontal,itemCount: items.length),
 
 
             SizedBox(height: 30),
