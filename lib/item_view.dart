@@ -1,3 +1,4 @@
+
 import 'package:ecommerce/dataModal.dart';
 import 'package:flutter/material.dart';
 
@@ -33,7 +34,7 @@ class _Item_ViewState extends State<Item_View> {
             height: 250,
             width: 500,
             decoration: BoxDecoration(
-                color: Color(0xffE2F8F7),
+                color: Colors.pink,
                 borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(25),
                     topRight: Radius.circular(25))),
@@ -71,17 +72,17 @@ class _Item_ViewState extends State<Item_View> {
                   "${info.name}",
                   style: TextStyle(
                     fontSize: 30,
-                    color: Colors.deepPurpleAccent,
+                    color: Colors.white,
                   ),
                 ),
                 Text("${info.data}",
                     style: TextStyle(
-                        fontSize: 13, color: Colors.deepPurpleAccent,),textAlign: TextAlign.center),
+                        fontSize: 13, color: Colors.white,),textAlign: TextAlign.center),
                 Text(
                   "Quality",
                   style: TextStyle(
                     fontSize: 25,
-                    color: Colors.deepPurpleAccent,
+                    color: Colors.white,
                   ),
                 ),
                 Container(
@@ -145,7 +146,7 @@ class _Item_ViewState extends State<Item_View> {
                     children: [
                       Text("Money",
                           style: TextStyle(
-                              fontSize: 35, color: Colors.blueAccent)),
+                              fontSize: 35, color: Colors.white)),
                       Container(
                         height: 35,
                         width: 120,
